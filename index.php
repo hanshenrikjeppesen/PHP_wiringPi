@@ -12,7 +12,7 @@
 	<h1>Controlling GPIO from PHP</h1>
 	</div>
 	
-<form method="get" action="gpio.php">
+<form method="get" action="index.php">
 		<input type="submit" value="ON" name="on">
               <input type="submit" value="OFF" name="off">
          </form>
