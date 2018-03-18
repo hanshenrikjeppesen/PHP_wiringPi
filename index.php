@@ -6,59 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>RaspberryPi - learning PHP</title>
 	<style>
-input[type="submit"]{
-  display:block;
-  margin: 30px auto;
-  border-radius: 21px;
+.button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
   border: none;
-  padding: 10px;
-  width: 60%;
-  
-  cursor:pointer;
-  text-transform:uppercase;
-  transition:0.5s all ease-in-out;
-
- }
-input[type="submit"]:hover{
-  letter-spacing:5px;
-  font-weight:bold;
-  
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
 }
-.form{
-  background: linear-gradient(182deg, #a8e3f2, #3d8fb8, #136f9c);
-  background-size: 600% 600%;
 
-  -webkit-animation: AnimationName 30s ease infinite;
-  -moz-animation: AnimationName 30s ease infinite;
-  animation: AnimationName 30s ease infinite;
+.button:hover {background-color: #3e8e41}
 
-  @-webkit-keyframes AnimationName {
-    0%{background-position:0% 30%}
-    50%{background-position:100% 71%}
-    100%{background-position:0% 30%}
-  }
-  @-moz-keyframes AnimationName {
-    0%{background-position:0% 30%}
-    50%{background-position:100% 71%}
-    100%{background-position:0% 30%}
-  }
-  @keyframes AnimationName {
-    0%{background-position:0% 30%}
-    50%{background-position:100% 71%}
-    100%{background-position:0% 30%}
-  }
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 	</style>
 </head>
 <body>
 	<div class="topbox">
 	<h1>Controlling GPIO from PHP</h1>
-	</div>
-<div class="form">	
+	</div>	
 <form method="get" action="index.php">
-		<input type="submit" value="ON" name="on">
+		<input type="submit" class="button" value="ON" name="on">
               <input type="submit" value="OFF" name="off">
-	</form></div>
+	</form>
          <?php
          $setmode17 = shell_exec("/usr/local/bin/gpio -g mode 5 out");
          if(isset($_GET['on'])){
