@@ -39,6 +39,14 @@
   border-radius: 15px;
   box-shadow: 0 9px #999;
 }
+.buttonOff:hover {background-color: #681226}
+
+.buttonOff:active {
+  background-color: #5b0104;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 	</style>
 </head>
 <body>
