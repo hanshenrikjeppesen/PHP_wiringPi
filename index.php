@@ -10,9 +10,8 @@
 <body>
 	<div class="topbox">
 	<h1>Controlling GPIO from PHP</h1>
-</div
+	</div>
 	
-	LED Control:
 <form method="get" action="gpio.php">
 		<input type="submit" value="ON" name="on">
               <input type="submit" value="OFF" name="off">
@@ -25,7 +24,8 @@
          }
          else if(isset($_GET['off'])){
                  $gpio_off = shell_exec("/usr/local/bin/gpio -g write 5 0");
-                 echo "LED is off";1         }
+                 echo "LED is off";
+	 }
 	?>
 	<h2>Next Script</h2>	
 	<h2><a href="script1_9.php" target="_blank">Script 1.9</a></h2>
