@@ -9,30 +9,24 @@
 </head>
 <body>
 	<div class="topbox">
-	<h1>Testing and Learning PHP</h1>
-</div>
-	<?php
-	# Script version 1.1
-	# Created Marts 11 2018
-	# Created by Hans Henrik Jeppesen
-	# hans@eaaa.dk
-
-	// Creating new variables with predefined values
-	$file = $_SERVER['SCRIPT_FILENAME'];
-	$user = $_SERVER['HTTP_USER_AGENT'];
-	$server = $_SERVER['SERVER_SOFTWARE'];
-
-	//Print the name of the script;
-	echo "<h2>You are running the file:</h2><br/><p><strong>$file</strong></p>\n";
-
-	//Print user's information;
-	echo "<h2>You are viewing this page using:</h2><br/><p><strong>$user</strong></p>\n";
-
-	//Print the server information to the browser;
-	echo "<h2>The server is running:</h2><br/><p><strong>$server</strong></p>\n";
-
+	<h1>Controlling GPIO from PHP</h1>
+</div
 	
-		?>
+	LED Control:
+<form method="get" action="gpio.php">
+		<input type="submit" value="ON" name="on">
+              <input type="submit" value="OFF" name="off">
+         </form>
+         <?php
+         $setmode17 = shell_exec("/usr/local/bin/gpio -g mode 5 out");
+         if(isset($_GET['on'])){
+                 $gpio_on = shell_exec("/usr/local/bin/gpio -g write 5 1");
+                 echo "LED is on";
+         }
+         else if(isset($_GET['off'])){
+                 $gpio_off = shell_exec("/usr/local/bin/gpio -g write 5 0");
+                 echo "LED is off";1         }
+	?>
 	<h2>Next Script</h2>	
 	<h2><a href="script1_9.php" target="_blank">Script 1.9</a></h2>
 </body>
